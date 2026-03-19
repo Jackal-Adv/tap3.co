@@ -122,6 +122,18 @@ function flip(el, words, getIdx, setIdx) {
 
 
 
+function setMinWidth(el, words) {
+  const s = document.createElement('span');
+  s.style.cssText = 'visibility:hidden;position:absolute;white-space:nowrap;font:' + getComputedStyle(el).font + ';letter-spacing:' + getComputedStyle(el).letterSpacing + ';text-transform:uppercase;';
+  document.body.appendChild(s);
+  let m = 0;
+  words.forEach(w => { s.textContent = w; m = Math.max(m, s.offsetWidth); });
+  document.body.removeChild(s);
+  el.style.minWidth = m + 'px';
+}
+setMinWidth(elA, aWords);
+setMinWidth(elP, pWords);
+
 function scheduleNext() {
   const r = Math.random();
   const delay = 9000 + Math.random() * 6000;
