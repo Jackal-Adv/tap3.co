@@ -27,7 +27,7 @@ body {
   padding: 40px 24px;
 }
 .logo { margin-bottom: 48px; }
-.logo svg { width: 220px; height: auto; }.tagline {
+.logo svg { width: 300px; height: auto; }.tagline {
   font-size: 14px; font-weight: 400;
   letter-spacing: 0.10em; text-transform: uppercase;
   margin-bottom: 32px; line-height: 1.8;
@@ -47,13 +47,10 @@ body {
 }
 .rotate-word.fade-out { opacity: 0; transform: translateY(-4px); }
 .rotate-word.fade-in { opacity: 1; transform: translateY(0); }
-#w-a { min-width: 130px; }
-#w-p { min-width: 115px; }
 @media (max-width: 600px) {
+  .logo svg { width: 200px; }
   .tagline { font-size: 11px; letter-spacing: 0.08em; }
   .tagline .dot { margin: 0 4px; }
-  #w-a { min-width: 100px; }
-  #w-p { min-width: 85px; }
 }.divider {
   width: 60px; height: 2px;
   background: linear-gradient(90deg, var(--brand-purple), var(--brand-red), var(--brand-orange));
@@ -65,9 +62,9 @@ body {
   color: #999; line-height: 1.7; margin-bottom: 12px;
 }
 .agentic {
-  font-size: 14px; font-weight: 200;
+  font-size: 14px; font-weight: 300;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: #999; font-style: italic;
+  color: var(--brand-purple); font-style: italic;
   margin-bottom: 48px;
 }
 .slogan {
@@ -130,6 +127,19 @@ function scheduleNext() {
     scheduleNext();
   }, delay);
 }
+
+// Auto-size slots to longest word so nothing shifts
+function setMinWidth(el, words) {
+  const span = document.createElement('span');
+  span.style.cssText = 'visibility:hidden;position:absolute;white-space:nowrap;font:' + getComputedStyle(el).font + ';letter-spacing:' + getComputedStyle(el).letterSpacing + ';text-transform:uppercase;';
+  document.body.appendChild(span);
+  let max = 0;
+  words.forEach(w => { span.textContent = w; max = Math.max(max, span.offsetWidth); });
+  document.body.removeChild(span);
+  el.style.minWidth = max + 'px';
+}
+setMinWidth(elA, aWords);
+setMinWidth(elP, pWords);
 
 scheduleNext();
 </script>
