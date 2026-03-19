@@ -38,6 +38,7 @@ body {
 .tagline .w-p { color: var(--brand-orange); }
 .rotate-word {
   display: inline-block;
+  min-width: 160px;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .rotate-word.fade-out { opacity: 0; transform: translateY(-6px); }
@@ -96,8 +97,11 @@ const els = {
   a: document.getElementById('w-a'),
   p: document.getElementById('w-p')
 };
+const order = ['t', 'a', 'p'];
+let turn = 0;
 
-function flip(key) {
+function flipNext() {
+  const key = order[turn];
   const el = els[key];
   el.classList.remove('fade-in');
   el.classList.add('fade-out');
@@ -107,11 +111,10 @@ function flip(key) {
     el.classList.remove('fade-out');
     el.classList.add('fade-in');
   }, 400);
+  turn = (turn + 1) % order.length;
 }
 
-setInterval(() => flip('t'), 4000);
-setInterval(() => flip('a'), 5000);
-setInterval(() => flip('p'), 3500);
+setInterval(flipNext, 2500);
 </script>
 
 </body>
