@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAP³ — Talent Acquisition Partner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -25,36 +25,44 @@ body {
   justify-content: center;
   text-align: center;
   padding: 40px 24px;
-}.logo { margin-bottom: 48px; }
-.logo svg { width: 220px; height: auto; }
-.tagline {
-  font-size: 14px; font-weight: 300;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: #999; margin-bottom: 32px; line-height: 1.8;
 }
-.tagline .rotate-word {
-  display: inline-block; min-width: 90px;
-  color: var(--brand-orange); font-weight: 400;
+.logo { margin-bottom: 48px; }
+.logo svg { width: 220px; height: auto; }.tagline {
+  font-size: 14px; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 32px; line-height: 1.8;
+  background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-purple) 18%, var(--brand-red) 45%, var(--brand-orange) 65%, var(--brand-orange) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.tagline .dot {
+  -webkit-text-fill-color: #ccc;
+}
+.rotate-word {
+  display: inline-block;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.tagline .rotate-word.fade-out {
-  opacity: 0; transform: translateY(-6px);
-}
-.tagline .rotate-word.fade-in {
-  opacity: 1; transform: translateY(0);
-}
+.rotate-word.fade-out { opacity: 0; transform: translateY(-6px); }
+.rotate-word.fade-in { opacity: 1; transform: translateY(0); }
 .message {
-  font-size: 18px; font-weight: 400; color: #555;
-  max-width: 420px; line-height: 1.7; margin-bottom: 48px;
+  font-size: 14px; font-weight: 300;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #999; max-width: 420px;
+  line-height: 1.7; margin-bottom: 12px;
 }
-.message .agentic {
-  display: block; font-weight: 300; color: var(--brand-purple);
-  font-style: italic; margin-top: 4px;
-}
-.divider {
+.agentic {
+  font-size: 14px; font-weight: 200;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #999; font-style: italic;
+  margin-bottom: 48px;
+}.divider {
   width: 60px; height: 2px;
   background: linear-gradient(90deg, var(--brand-purple), var(--brand-red), var(--brand-orange));
   margin-bottom: 32px; border-radius: 1px;
+}
+.slogan {
+  font-size: 13px; font-weight: 300;
+  color: #bbb; letter-spacing: 0.04em;
+  margin-bottom: 24px;
 }
 .contact { font-size: 13px; color: #bbb; }
 .contact a { color: var(--brand-orange); text-decoration: none; transition: color 0.15s; }
@@ -66,29 +74,45 @@ body {
 <div class="logo">
   <svg viewBox="150 265 725 240" aria-label="TAP³"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#301c57"/><stop offset="18%" stop-color="#301c57"/><stop offset="45%" stop-color="#DF3912"/><stop offset="65%" stop-color="#EB6320"/><stop offset="100%" stop-color="#EB6320"/></linearGradient></defs><path fill="url(#grad)" d="m769.61 268.87v10.551h79.441l-41.584 46.238v8.3789h11.793c13.033 0 22.653 2.4819 29.48 7.1367 6.5167 4.9651 9.9297 11.483 9.9297 19.861 0 8.6889-3.4132 15.205-10.24 19.859-6.827 4.9651-16.447 7.1367-29.48 7.1367-9.9302 0-19.24-1.2406-27.309-4.3438-8.0683-2.7929-14.583-6.5171-18.928-11.172l-5.5859 9.3105c4.6548 4.9651 11.792 8.9984 21.102 12.102 9.3096 3.1032 19.549 4.6562 30.721 4.6562 16.447 0 29.171-3.4152 38.17-10.242 8.9993-6.827 13.654-16.135 13.654-27.307 0-10.861-4.344-19.552-12.723-26.379-8.3786-6.5167-20.172-9.9299-35.688-10.24l42.824-47.479v-8.0684zm-616.38 13.03v14.275h78.201v202.95h15.826v-202.95h78.201v-14.28zm263.88 0-99.924 217.22h17.068l90.613-199.85 90.924 199.85h17.068l-99.94-217.22zm155.18 0v14.275h77.891c22.964 0 40.652 5.2751 53.064 15.516 12.102 10.241 18.311 24.826 18.311 43.445 0 18.93-6.2081 33.515-18.311 43.445-12.413 10.241-30.101 15.205-53.064 15.205h-77.891v85.338h15.826v-71.062h62.064c27.308 0 48.72-6.2068 64.236-19.24s23.273-30.722 23.273-53.686c0-22.653-7.7575-40.652-23.273-53.686-15.516-13.033-36.928-19.551-64.236-19.551z"/></svg>
 </div>
-
-<div class="tagline">Talent · Acquisition · <span class="rotate-word fade-in">Partner</span></div>
+<div class="tagline"><span class="rotate-word fade-in" id="w-t">Talent</span> <span class="dot">·</span> <span class="rotate-word fade-in" id="w-a">Acquisition</span> <span class="dot">·</span> <span class="rotate-word fade-in" id="w-p">Partner</span></div>
 
 <div class="divider"></div>
 
-<p class="message">Recruitment as a Service.<span class="agentic">but Agentic.</span></p>
+<p class="message">Recruitment as a Service.</p>
+<p class="agentic">but Agentic.</p>
+
+<p class="slogan">Are you ready to TAP your talent?</p>
 
 <p class="contact"><a href="mailto:info@tap3.co">info@tap3.co</a></p>
 
 <script>
-const words = ['Partner', 'Protocol', 'Platform'];
-let i = 0;
-const el = document.querySelector('.rotate-word');
-setInterval(() => {
+const words = {
+  t: ['Talent', 'Technology', 'Transformation'],
+  a: ['Acquisition', 'Automation', 'Architecture'],
+  p: ['Partner', 'Protocol', 'Platform']
+};
+const idx = { t: 0, a: 0, p: 0 };
+const els = {
+  t: document.getElementById('w-t'),
+  a: document.getElementById('w-a'),
+  p: document.getElementById('w-p')
+};
+
+function flip(key) {
+  const el = els[key];
   el.classList.remove('fade-in');
   el.classList.add('fade-out');
   setTimeout(() => {
-    i = (i + 1) % words.length;
-    el.textContent = words[i];
+    idx[key] = (idx[key] + 1) % words[key].length;
+    el.textContent = words[key][idx[key]];
     el.classList.remove('fade-out');
     el.classList.add('fade-in');
   }, 400);
-}, 3000);
+}
+
+setInterval(() => flip('t'), 4000);
+setInterval(() => flip('a'), 5000);
+setInterval(() => flip('p'), 3500);
 </script>
 
 </body>
