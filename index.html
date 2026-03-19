@@ -31,18 +31,23 @@ body {
   font-size: 14px; font-weight: 400;
   letter-spacing: 0.10em; text-transform: uppercase;
   margin-bottom: 32px; line-height: 1;
-  display: flex; align-items: center; justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%; max-width: 600px;
 }
 .tag-t {
   text-align: right; color: var(--brand-purple);
+  padding-right: 0.5em;
 }
 .tag-a {
-  text-align: center; margin: 0 10px;
+  text-align: center;
   background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-red) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .tag-p {
   text-align: left; color: var(--brand-orange);
+  padding-left: 0.5em;
 }
 .rotate-word {
   display: inline-block;
