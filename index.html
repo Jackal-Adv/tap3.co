@@ -129,7 +129,7 @@ function setMinWidth(el, words) {
   let m = 0;
   words.forEach(w => { s.textContent = w; m = Math.max(m, s.offsetWidth); });
   document.body.removeChild(s);
-  el.style.minWidth = m + 'px';
+  el.style.minWidth = (m + 2) + 'px';
 }
 setMinWidth(elA, aWords);
 setMinWidth(elP, pWords);
