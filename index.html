@@ -43,6 +43,7 @@ body {
   position: relative;
 }
 .slot-inner {
+  display: block;
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slot-word {
@@ -149,11 +150,13 @@ setSlotWidth(slotP, pWords);
 
 let aIdx = 0, pIdx = 0;
 
+const wordH = reelA.querySelector('.slot-word').offsetHeight;
+
 function spin(reelEl, words, getIdx, setIdx) {
   const next = (getIdx() + 1) % words.length;
-  const targetY = (next === 0 ? words.length : next);
+  const targetPos = (next === 0 ? words.length : next);
   reelEl.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
-  reelEl.style.transform = 'translateY(-' + (targetY * 1.2) + 'em)';
+  reelEl.style.transform = 'translateY(-' + (targetPos * wordH) + 'px)';
   if (next === 0) {
     setTimeout(() => {
       reelEl.style.transition = 'none';
