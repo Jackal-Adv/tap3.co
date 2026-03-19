@@ -35,14 +35,14 @@ body {
   line-height: 1;
 }
 .tagline-left {
-  flex: 1; display: flex; justify-content: flex-end;
+  display: inline-block; text-align: right;
   padding-right: 10px;
 }
 .tagline-center {
-  flex-shrink: 0;
+  display: inline-block; text-align: center;
 }
 .tagline-right {
-  flex: 1; display: flex; justify-content: flex-start;
+  display: inline-block; text-align: left;
   padding-left: 10px;
 }
 .w-t { color: var(--brand-purple); }
@@ -160,6 +160,10 @@ buildReel(reelA, aWords);
 buildReel(reelP, pWords);
 setSlotWidth(slotA, aWords);
 setSlotWidth(slotP, pWords);
+// Make T column match P column width for symmetry around center
+const tEl = document.querySelector('.tagline-left');
+const pColW = slotP.offsetWidth;
+tEl.style.width = pColW + 'px';
 
 let aIdx = 0, pIdx = 0;
 
